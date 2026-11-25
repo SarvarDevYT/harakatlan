@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Kirish</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#D4FF3F}a:hover{color:#E6FF8A}
+@keyframes qq-spin{to{transform:rotate(360deg)}}
+@keyframes qq-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0B0B; color: #F5F5F2; font-family: Inter, sans-serif; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 56px 20px 32px;">
+  <svg width="390" height="844" viewBox="0 0 390 844" fill="none" stroke="#1C1C1C" stroke-width="1.2" style="position: absolute; inset: 0;" aria-hidden="true">
+    <path d="M-10 90 C 70 50, 170 140, 250 100 S 360 50, 400 90"></path>
+    <path d="M-10 150 C 80 110, 180 200, 260 160 S 360 110, 400 150"></path>
+    <path d="M-10 520 C 90 480, 160 570, 260 530 S 370 480, 400 520"></path>
+    <path d="M-10 580 C 100 540, 170 630, 270 590 S 370 540, 400 580"></path>
+  </svg>
+
+  <div style="position: absolute; left: 0; top: 110px; width: 390px; height: 320px; animation: qq-float 5s ease-in-out infinite;" aria-hidden="true">
+    <div style="position: absolute; left: 45px; top: 10px; width: 300px; height: 300px; border-radius: 999px; background: radial-gradient(circle, rgba(212,255,63,0.35) 0%, rgba(212,255,63,0) 65%);"></div>
+    <img src="/_blob/ca1bedeba475560b68bcdb6106f122e9" alt="" style="position: absolute; left: -5px; top: -30px; width: 400px; height: 400px; object-fit: cover; -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 58%, transparent 72%); mask-image: radial-gradient(circle at 50% 50%, #000 58%, transparent 72%);">
+    <sc-for list="{{objects}}" as="o" hint-placeholder-count="0">
+      <div style="{{o.style}}">
+        <sc-if value="{{o.isTree}}" hint-placeholder-val="{{false}}">
+          <svg width="{{o.w}}" height="{{o.h}}" viewBox="0 0 34 44"><ellipse cx="17" cy="40" rx="10" ry="3" fill="rgba(0,0,0,0.25)"></ellipse><rect x="14" y="27" width="6" height="13" rx="2" fill="#8A5A35" stroke="#1A1A1A" stroke-width="1.5"></rect><circle cx="17" cy="17" r="14" fill="#3E9A4A" stroke="#1A1A1A" stroke-width="1.5"></circle><circle cx="12" cy="12" r="5" fill="#64C468"></circle></svg>
+        </sc-if>
+        <sc-if value="{{o.isPine}}" hint-placeholder-val="{{false}}">
+          <svg width="{{o.w}}" height="{{o.h}}" viewBox="0 0 30 48"><ellipse cx="15" cy="45" rx="9" ry="3" fill="rgba(0,0,0,0.25)"></ellipse><rect x="13" y="38" width="4" height="7" fill="#8A5A35"></rect><polygon points="15,2 27,26 3,26" fill="#2F8A4A" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"></polygon><polygon points="15,12 28,39 2,39" fill="#3FA157" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"></polygon></svg>
+        </sc-if>
+        <sc-if value="{{o.isFlag}}" hint-placeholder-val="{{false}}">
+          <svg width="{{o.w}}" height="{{o.h}}" viewBox="0 0 22 34"><line x1="4" y1="32" x2="4" y2="2" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"></line><path d="M4 3 L20 8 L4 14Z" fill="#D4FF3F" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+        </sc-if>
+        <sc-if value="{{o.isTower}}" hint-placeholder-val="{{false}}">
+          <svg width="{{o.w}}" height="{{o.h}}" viewBox="0 0 44 70" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"><ellipse cx="22" cy="65" rx="17" ry="4" fill="rgba(0,0,0,0.28)" stroke="none"></ellipse><rect x="10" y="28" width="24" height="37" fill="#C98F55"></rect><path d="M10 40h24M10 52h24" stroke-width="1.5"></path><rect x="18" y="52" width="8" height="13" fill="#6B4527"></rect><path d="M5 29 L22 5 L39 29Z" fill="#6E94E0"></path><rect x="19" y="32" width="6" height="7" rx="3" fill="#1A1A1A" stroke="none"></rect></svg>
+        </sc-if>
+        <sc-if value="{{o.isCastle}}" hint-placeholder-val="{{false}}">
+          <svg width="{{o.w}}" height="{{o.h}}" viewBox="0 0 76 86" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round">
+            <ellipse cx="38" cy="80" rx="32" ry="6" fill="rgba(0,0,0,0.28)" stroke="none"></ellipse>
+            <path d="M14 78 V44 h6 v-5 h6 v5 h6 v-5 h12 v5 h6 v-5 h6 v5 h6 V78Z" fill="#EDE7DA"></path>
+            <path d="M32 78 V66 a6 6 0 0 1 12 0 V78Z" fill="#6B4527"></path>
+            <rect x="4" y="34" width="16" height="44" fill="#DED6C5"></rect>
+            <path d="M1 35 L12 14 L23 35Z" fill="#C8F05A"></path>
+            <rect x="56" y="34" width="16" height="44" fill="#DED6C5"></rect>
+            <path d="M53 35 L64 14 L75 35Z" fill="#C8F05A"></path>
+            <rect x="29" y="22" width="18" height="28" fill="#EDE7DA"></rect>
+            <path d="M26 23 L38 2 L50 23Z" fill="#C8F05A"></path>
+            <rect x="35" y="29" width="6" height="9" rx="3" fill="#1A1A1A"></rect>
+            <rect x="9" y="46" width="5" height="7" rx="2.5" fill="#1A1A1A" stroke="none"></rect>
+            <rect x="62" y="46" width="5" height="7" rx="2.5" fill="#1A1A1A" stroke="none"></rect>
+          </svg>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="position: absolute; left: -40px; top: 378px; width: 470px; height: 42px; background: #F5F5F2; color: #0B0B0B; transform: rotate(5deg); display: flex; align-items: center; overflow: hidden; white-space: nowrap; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em;" aria-hidden="true">
+    <span style="padding-left: 20px;">HAR QADAM HISOBLANADI / HAR QADAM HISOBLANADI / HAR QADAM</span>
+  </div>
+  <div style="position: absolute; left: -40px; top: 378px; width: 470px; height: 46px; background: #D4FF3F; color: #0B0B0B; transform: rotate(-6deg); display: flex; align-items: center; overflow: hidden; white-space: nowrap; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" aria-hidden="true">
+    <span style="padding-left: 30px;">5.24 KM / +5 KATAK / QAL'A LV 4 / 14 G'ALABA / 5.24 KM</span>
+  </div>
+
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 32px; background: #D4FF3F; clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);"></div>
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em;">QADAM QAL'A</span>
+    </div>
+    <span style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; font-size: 12px; color: #C9C9C4;">Toshkent ligasi</span>
+  </div>
+
+  <div style="position: absolute; right: 14px; top: 104px; width: 112px; height: 112px;" aria-hidden="true">
+    <svg width="112" height="112" viewBox="0 0 112 112" style="animation: qq-spin 14s linear infinite;">
+      <circle cx="56" cy="56" r="55" fill="#0B0B0B" stroke="#D4FF3F" stroke-width="2"></circle>
+      <path id="circ" d="M56,56 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" fill="none"></path>
+      <text font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#D4FF3F"><textPath href="#circ">YUR · QUR · BOSIB OL · QADAM QAL'A ·</textPath></text>
+    </svg>
+    <span style="position: absolute; left: 34px; top: 34px; width: 44px; height: 44px; border-radius: 999px; background: #D4FF3F; display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4a1.5 1.5 0 1 0 0 .01M10 21l2-6 3 3v3M8 12l2-4 4 1 3 3M9 9l-3 2"></path></svg>
+    </span>
+  </div>
+
+  <div style="position: relative; margin-top: auto; display: flex; flex-direction: column;">
+    <span style="font-family: Caveat, cursive; font-size: 28px; font-weight: 700; color: #D4FF3F; transform: rotate(-5deg); align-self: flex-end; margin-bottom: -18px; margin-right: 10px; position: relative; z-index: 1;">kechqurun qal'ang tayyor!</span>
+    <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.04em; line-height: 0.86; display: flex; flex-direction: column;">
+      <span style="font-size: 84px; color: #F5F5F2;">YUR.</span>
+      <span style="font-size: 84px; color: transparent; -webkit-text-stroke: 2px #D4FF3F;">QUR.</span>
+      <span style="font-size: 62px; color: #D4FF3F;">BOSIB OL.</span>
+    </h1>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 10px; margin-top: 22px;">
+    <a href="Home.dc.html" style="height: 62px; border-radius: 999px; background: #D4FF3F; color: #0B0B0B; display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 28px; text-decoration: none; font-weight: 700; font-size: 17px; box-shadow: 0 0 40px rgba(212,255,63,0.35);">
+      <span>Ro'yxatdan o'tish</span>
+      <span style="width: 46px; height: 46px; border-radius: 999px; background: #0B0B0B; display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4FF3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </span>
+    </a>
+    <a href="Home.dc.html" style="align-self: center; padding: 8px 12px; font-size: 14px; color: #C9C9C4; text-decoration: none;">Akkauntim bor — <span style="color: #D4FF3F; font-weight: 600;">Kirish</span></a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    // one string per row; o own, F conquered with flag, a Ali, A Ali tower, O own castle,
+    // g grass, w water, T tree, P pine, ~ nothing
+    var rows = [
+      '~gTaa~',
+      'goFaA~',
+      'ooOoFg',
+      'Poooog',
+      '~gFogw',
+      '~~gwg~'
+    ];
+    var TW = 64, TH = 32, OX = 163, OY = 92, DEPTH = 12;
+    var P = {
+      g: ['#86CF62', '#7AC458', '#4E8F36'],
+      w: ['#5CC1F0', '#52B6E8', '#2E86B8'],
+      o: ['#C8F05A', '#BEE84E', '#7A9E22'],
+      a: ['#8DB4F2', '#82A9EA', '#4A6FA8']
+    };
+    var base = { T: 'g', P: 'g', O: 'o', F: 'c', A: 'a' };
+    var kind = { T: 'tree', P: 'pine', O: 'castle', F: 'flag', A: 'tower' };
+    var size = { tree: [40, 52], pine: [36, 58], castle: [104, 118], flag: [26, 40], tower: [56, 90] };
+    var diamond = 'clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);';
+    var cells = [];
+    rows.forEach(function (row, r) {
+      for (var c = 0; c < row.length; c++) {
+        if (row.charAt(c) !== '~') cells.push({ r: r, c: c, ch: row.charAt(c) });
+      }
+    });
+    cells.sort(function (p, q) { return (p.r + p.c) - (q.r + q.c) || p.c - q.c; });
+    var tiles = [], objects = [];
+    cells.forEach(function (cell) {
+      var t = base[cell.ch] || cell.ch;
+      var x = (cell.c - cell.r) * TW / 2 + OX;
+      var y = (cell.c + cell.r) * TH / 2 + OY;
+      var alt = (cell.r + cell.c) % 2;
+      var top, side;
+      if (t === 'c') { top = 'repeating-linear-gradient(135deg,#C8F05A 0 7px,#A9D63A 7px 14px)'; side = '#7A9E22'; }
+      else { top = P[t][alt]; side = P[t][2]; }
+      tiles.push({
+        side: 'position:absolute;left:' + x + 'px;top:' + (y + DEPTH) + 'px;width:' + TW + 'px;height:' + TH + 'px;' + diamond + 'background:' + side,
+        top: 'position:absolute;left:' + x + 'px;top:' + (y + (t === 'w' ? 4 : 0)) + 'px;width:' + TW + 'px;height:' + TH + 'px;' + diamond + 'background:' + top
+      });
+      var k = kind[cell.ch];
+      if (k) {
+        var s = size[k], cx = x + TW / 2, cy = y + TH / 2;
+        objects.push({
+          isTree: k === 'tree', isPine: k === 'pine', isFlag: k === 'flag', isTower: k === 'tower', isCastle: k === 'castle',
+          w: s[0], h: s[1],
+          style: 'position:absolute;left:' + (cx - s[0] / 2) + 'px;top:' + (cy - s[1] + 6) + 'px;width:' + s[0] + 'px;height:' + s[1] + 'px;'
+        });
+      }
+    });
+    return { tiles: [], objects: [], false: false };
+  }
+}
+</script>
+</body>
+</html>

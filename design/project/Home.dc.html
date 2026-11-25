@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Bugun</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#D4FF3F}a:hover{color:#E6FF8A}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0B0B; color: #F5F5F2; font-family: Inter, sans-serif; position: relative; overflow: hidden;">
+  <svg width="390" height="844" viewBox="0 0 390 844" fill="none" stroke="#1C1C1C" stroke-width="1.2" style="position: absolute; inset: 0;" aria-hidden="true">
+    <path d="M-10 40 C 70 10, 150 90, 240 50 S 360 0, 400 40"></path>
+    <path d="M-10 90 C 80 60, 150 140, 250 100 S 360 50, 400 90"></path>
+    <path d="M-10 150 C 90 120, 160 200, 260 160 S 370 110, 400 150"></path>
+    <path d="M-10 470 C 60 430, 170 520, 250 480 S 360 430, 400 470"></path>
+    <path d="M-10 530 C 70 490, 180 580, 260 540 S 360 490, 400 530"></path>
+    <path d="M-10 700 C 90 660, 160 750, 260 710 S 370 660, 400 700"></path>
+    <path d="M-10 760 C 100 720, 170 810, 270 770 S 370 720, 400 760"></path>
+  </svg>
+
+  <div style="position: relative; padding: 56px 20px 0; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="width: 48px; height: 48px; border-radius: 999px; background: #D4FF3F; color: #0B0B0B; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; box-shadow: 0 0 0 3px #0B0B0B, 0 0 0 5px #D4FF3F;">J</span>
+      <div style="flex-grow: 1; display: flex; flex-direction: column;">
+        <span style="font-size: 13px; color: #A3A39D;">Seshanba, 17-noyabr</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;">Salom, Jasur</span>
+      </div>
+      <button aria-label="Bildirishnomalar" style="width: 48px; height: 48px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; position: relative;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5F5F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10 21a2 2 0 0 0 4 0"></path></svg>
+        <span style="position: absolute; top: 11px; right: 12px; width: 8px; height: 8px; border-radius: 999px; background: #D4FF3F;"></span>
+      </button>
+    </div>
+
+    <span style="margin-top: 28px; font-size: 14px; color: #A3A39D; letter-spacing: 0.08em; text-transform: uppercase;">Bugun yurdingiz</span>
+    <div style="position: relative; display: flex; align-items: flex-end; gap: 8px; margin-top: 2px;">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-size: 112px; font-weight: 700; line-height: 0.9; letter-spacing: -0.04em;">5.24</span>
+      <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; color: #A3A39D; margin-bottom: 10px;">km</span>
+      <span style="position: absolute; right: 0; top: -14px; font-family: Caveat, cursive; font-size: 30px; font-weight: 700; color: #D4FF3F; transform: rotate(-8deg); line-height: 1; text-align: center;">zo'r<br>ketyapsiz!</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px; margin-top: 18px;">
+      <div style="flex-grow: 1; height: 30px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between;" role="img" aria-label="Kunlik maqsadning 65 foizi">
+        <sc-for list="{{ticks}}" as="t" hint-placeholder-count="22">
+          <span style="{{t.style}}"></span>
+        </sc-for>
+      </div>
+      <span style="font-size: 13px; color: #C9C9C4; white-space: nowrap;">8 km maqsad</span>
+    </div>
+  </div>
+
+  <div style="position: relative; height: 112px; margin-top: 6px;" aria-hidden="true">
+    <svg width="390" height="112" viewBox="0 0 390 112" style="position: absolute; inset: 0; overflow: visible;">
+      <path id="rib" d="M-30 70 C 60 10, 140 110, 220 56 S 360 10, 430 50" fill="none" stroke="#D4FF3F" stroke-width="38" stroke-linecap="round"></path>
+      <text font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#0B0B0B" dy="5">
+        <textPath href="#rib" startOffset="2%">HAR QADAM · YANGI HUDUD · HAR QADAM · YANGI HUDUD ·</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <div style="position: relative; padding: 0 20px; display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 12px; color: #A3A39D;">Qadamlar</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;">7 180</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 12px; color: #A3A39D;">Vaqt</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;">1:12</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 12px; color: #A3A39D;">Kuch</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: #D4FF3F;">+5</span>
+      </div>
+    </div>
+
+    <div style="position: relative; background: #D4FF3F; color: #0B0B0B; border-radius: 30px; padding: 20px; height: 168px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="position: absolute; right: -6px; top: 10px; width: 150px; height: 120px;" aria-hidden="true">
+        <sc-for list="{{mini}}" as="h" hint-placeholder-count="7">
+          <div style="{{h.side}}"></div>
+          <div style="{{h.top}}">
+            <sc-if value="{{h.castle}}" hint-placeholder-val="{{false}}">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2.2" stroke-linejoin="round"><path d="M4 21V9h3V6h3v3h4V6h3v3h3v12z"></path></svg>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; max-width: 190px;">
+        <span style="font-family: Caveat, cursive; font-size: 24px; font-weight: 700; line-height: 1;">qal'ang o'smoqda</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1;">5 ta yangi katak tayyor</span>
+      </div>
+      <a href="Territory.dc.html" style="align-self: flex-start; height: 48px; padding: 0 8px 0 20px; border-radius: 999px; background: #0B0B0B; color: #D4FF3F; display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; font-size: 15px;">Hududni qurish
+        <span style="width: 34px; height: 34px; border-radius: 999px; background: #D4FF3F; display: flex; align-items: center; justify-content: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <nav style="position: absolute; left: 20px; right: 20px; bottom: 24px; height: 68px; border-radius: 999px; background: rgba(27,27,27,0.92); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 8px;" aria-label="Asosiy menyu">
+    <a href="Home.dc.html" style="height: 52px; padding: 0 18px; border-radius: 999px; background: #D4FF3F; color: #0B0B0B; display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a1.5 1.5 0 1 0 0 .01M10 21l2-6 3 3v3M8 12l2-4 4 1 3 3M9 9l-3 2"></path></svg>
+      Bugun
+    </a>
+    <a href="Map.dc.html" aria-label="Xarita" style="width: 52px; height: 52px; border-radius: 999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9C9C4" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"></path></svg>
+    </a>
+    <a href="Territory.dc.html" aria-label="Hududim" style="width: 52px; height: 52px; border-radius: 999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9C9C4" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9h3V6h3v3h4V6h3v3h3v12z"></path></svg>
+    </a>
+    <a href="Profile.dc.html" aria-label="Profil" style="width: 52px; height: 52px; border-radius: 999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9C9C4" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var ticks = [];
+    for (var i = 0; i < 22; i++) {
+      ticks.push({ style: 'width:4px;border-radius:2px;height:' + (i < 14 ? 16 : 12) + 'px;background:' + (i < 14 ? '#D4FF3F' : '#3A3A38') });
+    }
+    var clip = 'clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);';
+    var cells = [[1, 0, 'o'], [2, 0, 'o'], [0, 1, 'o'], [1, 1, 'O'], [2, 1, 'o'], [1, 2, 'o'], [2, 2, 'n']];
+    var mini = cells.map(function (c) {
+      var castle = c[2] === 'O';
+      var x = c[0] * 40 + (c[1] % 2 ? 20 : 0);
+      var y = c[1] * 33 - (castle ? 8 : 0);
+      var top = c[2] === 'n' ? 'rgba(11,11,11,0.18)' : (castle ? '#F5F5F2' : '#0B0B0B');
+      var side = c[2] === 'n' ? 'transparent' : (castle ? '#3A3A38' : '#5E7716');
+      var d = c[2] === 'n' ? 0 : (castle ? 14 : 7);
+      return {
+        castle: castle,
+        side: 'position:absolute;left:' + x + 'px;top:' + (y + d) + 'px;width:38px;height:44px;' + clip + 'background:' + side,
+        top: 'position:absolute;left:' + x + 'px;top:' + y + 'px;width:38px;height:44px;display:flex;align-items:center;justify-content:center;' + clip + 'background:' + top
+      };
+    });
+    return { ticks: ticks, mini: mini, false: false };
+  }
+}
+</script>
+</body>
+</html>

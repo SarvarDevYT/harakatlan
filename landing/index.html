@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harakatlan — Yurib hudud egallang | O'zbekistonning GPS strategiya o'yini</title>
+  <meta name="description" content="Harakatlan — har bir qadamingizni real GPS xaritada neon hududlarga aylantiring. Qal'angizni quring, qo'shin yig'ing, 14 ta viloyat ligasida kurashing va Gemini AI Taom Skaneri bilan sog'lig'ingizni nazorat qiling." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <meta property="og:title" content="Harakatlan — Har qadam · Yangi hudud" />
+  <meta property="og:description" content="Piyoda yuring, GPS xaritada shahar ko'chalarini egallang, klanlar bilan jang qiling va Bronza I dan Olmosgacha ko'tariling." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Subtle topographic contour background matching HomeScreen -->
+  <div class="contour-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-80 120 C 240 20, 480 240, 820 110 S 1280 -20, 1520 120" />
+      <path d="M-80 220 C 260 120, 500 340, 840 210 S 1300 80, 1520 220" />
+      <path d="M-80 340 C 220 260, 520 440, 860 320 S 1320 180, 1520 340" />
+      <path d="M-80 560 C 240 460, 560 660, 900 540 S 1300 420, 1520 560" />
+      <path d="M-80 680 C 280 580, 580 780, 940 660 S 1320 540, 1520 680" />
+      <path d="M-80 800 C 300 720, 620 880, 960 770 S 1340 660, 1520 800" />
+    </svg>
+  </div>
+
+  <!-- Floating Pill Navigation matching app NavBar -->
+  <header class="nav-wrap">
+    <nav class="nav-pill" aria-label="Asosiy menyu">
+      <a class="brand" href="#top">
+        <img src="./assets/images/logo.png" alt="Harakatlan logotipi" width="38" height="38" />
+        <span>Harakatlan</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Imkoniyatlar</a>
+        <a href="#gps-map">Jonli Xarita</a>
+        <a href="#simulator">Kalkulyator</a>
+        <a href="#leagues">Ligalar</a>
+        <a href="#ranks">Reyting</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn-lime btn-sm" href="#download">
+          <span>Yuklab olish</span>
+          <span class="btn-dot" aria-hidden="true">→</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menyuni ochish" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <a href="#features">Imkoniyatlar</a>
+      <a href="#gps-map">Jonli Xarita</a>
+      <a href="#simulator">Kalkulyator</a>
+      <a href="#leagues">14 ta Liga</a>
+      <a href="#ranks">Mavsum Reytingi</a>
+      <a class="btn-lime" href="#download">Android APK olish</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="status-chip">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>O'zbekistonning #1 GPS Yurish &amp; Strategiya O'yini</span>
+        </div>
+
+        <h1>
+          Har qadamingiz —<br />
+          <span class="text-lime">yangi hudud.</span>
+        </h1>
+
+        <p class="hero-hand hand-note" aria-hidden="true">yuring, chizing, zabt eting!</p>
+
+        <p class="hero-lead">
+          Oddiy sayrni haqiqiy shahar jangiga aylantiring. Real GPS xaritada yurgan ko'chalaringizni
+          neon chegara bilan egallang, qal'angizni quring, qo'shin yig'ing va
+          O'zbekistonning 14 ta viloyat ligasida yetakchi bo'ling.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn-lime btn-lg" href="#download">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Android APK yuklab olish</span>
+          </a>
+          <a class="btn-glass btn-lg" href="#gps-map">
+            <span>Jonli xaritani ko'rish</span>
+          </a>
+        </div>
+
+        <!-- 22-tick daily goal widget inspired directly by HomeScreen -->
+        <div class="goal-widget glass-card">
+          <div class="goal-head">
+            <span class="muted-label">KUNLIK MAQSAD PROGRESSI</span>
+            <span class="hand-mini">zo'r ketyapsiz!</span>
+          </div>
+          <div class="goal-row">
+            <div class="goal-num">
+              <strong id="heroKm">5.24</strong><span>km</span>
+            </div>
+            <div class="ticks" id="heroTicks" aria-label="Kunlik maqsad shkalasi"></div>
+            <span class="goal-target">8 km maqsad</span>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-tile glass-card">
+            <span class="stat-label">Hudud birligi</span>
+            <strong class="stat-val text-lime">1 km = 1 katak</strong>
+          </div>
+          <div class="stat-tile glass-card">
+            <span class="stat-label">O'zbekiston bo'ylab</span>
+            <strong class="stat-val">14 viloyat ligasi</strong>
+          </div>
+          <div class="stat-tile glass-card">
+            <span class="stat-label">Sog'liq + AI</span>
+            <strong class="stat-val">Gemini Vision</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE PHONE MOCKUP WITH REAL SCREENSHOTS -->
+      <div class="hero-phone-col">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="hand-callout hand-callout-top" aria-hidden="true">
+          haqiqiy ilova<br />ekranlari!
+        </div>
+
+        <div class="phone-frame">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <img
+              id="phonePreviewImg"
+              src="./assets/screens/map.png"
+              alt="Harakatlan Jonli GPS Xarita ekrani"
+            />
+          </div>
+          <div class="phone-tabs" role="tablist" aria-label="Ilova ekranlari">
+            <button type="button" class="ptab" data-screen="home" data-caption="Bugun: kunlik masofa, 22 chiziqli maqsad, qo'shin va AI Taom Skaneri">Bugun</button>
+            <button type="button" class="ptab active" data-screen="map" data-caption="Xarita: CARTO Dark Matter GPS ko'chalarida neon hudud egallash">Xarita</button>
+            <button type="button" class="ptab" data-screen="territory" data-caption="Hudud: 3D suzuvchi orol, qal'a darajasi va kengaytirish">Hudud</button>
+            <button type="button" class="ptab" data-screen="clan" data-caption="Klan: do'stlar bilan jamoa tuzing va haftalik klan urushida qatnashing">Klan</button>
+            <button type="button" class="ptab" data-screen="profile" data-caption="Profil: Bronza I dan Olmosgacha mavsum reytingi va 10 ta qurol">Profil</button>
+          </div>
+        </div>
+
+        <p class="phone-caption" id="phoneCaption">
+          Xarita: CARTO Dark Matter GPS ko'chalarida neon hudud egallash
+        </p>
+      </div>
+    </section>
+
+    <!-- SIGNATURE DIAGONAL NEON RIBBON (straight from HomeScreen) -->
+    <div class="ribbon-wrap" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>HAR QADAM · YANGI HUDUD · QAL'ANGIZNI QURING · 14 VILOYAT LIGASI · BRONZA I DAN OLMOSGACHA · HAR QADAM · YANGI HUDUD · QAL'ANGIZNI QURING · 14 VILOYAT LIGASI · BRONZA I DAN OLMOSGACHA ·</span>
+      </div>
+    </div>
+
+    <!-- FEATURES BENTO GRID -->
+    <section id="features" class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">O'YIN MEXANIKASI</span>
+          <h2>Yurish — endi shunchaki sport emas.<br />Bu <span class="text-lime">strategiya.</span></h2>
+        </div>
+        <p class="hand-note right-note">har bir metr kuch beradi!</p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="bento-card bento-lime">
+          <div class="bento-top">
+            <span class="step-badge dark">01 · JONLI GPS</span>
+            <span class="bento-icon" aria-hidden="true">🗺️</span>
+          </div>
+          <h3>Real ko'chalarni egallang</h3>
+          <p>
+            Yurgan marshrutingiz xaritada yashil neon chiziq bilan chiziladi. Yopiq kontur yoki ko'cha bo'ylab
+            yurib hududingizni polygon shaklida muhrlang va raqib minoralari bilan to'qnashing.
+          </p>
+          <div class="chip-row">
+            <span class="mini-chip dark">CARTO Dark Matter</span>
+            <span class="mini-chip dark">Taktik Orol rejimi</span>
+          </div>
+        </article>
+
+        <article class="bento-card glass-card">
+          <div class="bento-top">
+            <span class="step-badge">02 · AVTO SINXRONIZATSIYA</span>
+            <span class="bento-icon" aria-hidden="true">👟</span>
+          </div>
+          <h3>Samsung Health, Health Connect &amp; Sensor</h3>
+          <p>
+            Androidda <strong>Health Connect</strong> (Samsung Health, Google Fit), iPhoneda <strong>Apple Health</strong>
+            orqali qadamlarni oladi. Ular o'rnatilmagan bo'lsa, telefonning ichki apparat sensori (Pedometer) avtomatik ishlaydi.
+          </p>
+          <div class="chip-row">
+            <span class="mini-chip">Health Connect</span>
+            <span class="mini-chip">Samsung Health</span>
+            <span class="mini-chip">Apple Health</span>
+          </div>
+        </article>
+
+        <article class="bento-card glass-card">
+          <div class="bento-top">
+            <span class="step-badge">03 · QAL'A &amp; QO'SHIN</span>
+            <span class="bento-icon" aria-hidden="true">🏰</span>
+          </div>
+          <h3>1-darajadan boshlab o'sing</h3>
+          <p>
+            Barcha yangi o'yinchilar toza <strong>0 km</strong> va <strong>1-daraja</strong>dan boshlaydi.
+            Har yurilgan kilometr mudofaa kuchingizni va qo'shiningizni (🛡️ Piyoda, 🐎 Otliq, 🏹 Kamonchi) oshiradi.
+          </p>
+          <div class="troop-pills">
+            <span>🛡️ Piyoda</span>
+            <span>🐎 Otliq</span>
+            <span class="text-lime">🏹 Kamonchi</span>
+          </div>
+        </article>
+
+        <article class="bento-card glass-card bento-wide">
+          <div class="bento-split">
+            <div>
+              <div class="bento-top">
+                <span class="step-badge lime-outline">04 · GEMINI AI VISION</span>
+              </div>
+              <h3>AI Taom &amp; Kaloriya Skaneri</h3>
+              <p>
+                Tushlik yoki kechki ovqatni rasmga oling — <strong>Gemini AI</strong> taom nomini,
+                tarkibiy qismlarini, umumiy kaloriya va oqsil/uglevod/yog' makrolarini soniyalar ichida hisoblab beradi.
+              </p>
+              <div class="chip-row">
+                <span class="mini-chip">Kaloriya (kcal)</span>
+                <span class="mini-chip">Oqsil · Uglevod · Yog'</span>
+                <span class="mini-chip">Tarkibiy tahlil</span>
+              </div>
+            </div>
+            <div class="scanner-preview glass-card">
+              <div class="scanner-head">
+                <span class="scanner-badge">Gemini AI</span>
+                <span class="muted-label">NAMUNA NATIJA</span>
+              </div>
+              <strong>Toshkent Palovi · 380g</strong>
+              <div class="macro-bars">
+                <div><span>Kaloriya</span><strong class="text-lime">640 kcal</strong></div>
+                <div><span>Oqsil</span><strong>24 g</strong></div>
+                <div><span>Uglevod</span><strong>72 g</strong></div>
+                <div><span>Yog'</span><strong>28 g</strong></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento-card glass-card">
+          <div class="bento-top">
+            <span class="step-badge orange">05 · KUNLIK DUEL</span>
+            <span class="bento-icon" aria-hidden="true">⚔️</span>
+          </div>
+          <h3>Har kuni 19:00 da Duel</h3>
+          <p>
+            Kun bo'yi yurib kuch to'plang. Kech soat 19:00 da kundalik duel ochiladi — g'olib qutidan
+            <strong>10 ta noyob qurol</strong>dan birini qo'lga kiritadi (Olmos Qilich, Olovli Kamon, Titan Bolg'asi...).
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GPS MAP & TACTICAL ISLAND SHOWCASE -->
+    <section id="gps-map" class="section container">
+      <div class="showcase-box glass-card">
+        <div class="showcase-info">
+          <span class="eyebrow">IKKITA XARITA REJIMI</span>
+          <h2>Haqiqiy ko'chalar va <span class="text-lime">Taktik Orol</span></h2>
+          <p>
+            Xarita bo'limida bitta bosish bilan <strong>GPS Xarita</strong> (CARTO Dark Matter Retina) va
+            <strong>Taktik Orol</strong> o'rtasida almashing. Shahringiz markazidagi raqib qal'alari va
+            klanlar urushi sektorlarini nazorat qiling.
+          </p>
+
+          <ul class="check-list">
+            <li><span class="dot lime"></span> O'z hududingiz (Neon Yashil polygon) hech qachon yo'qolmaydi</li>
+            <li><span class="dot blue"></span> Raqiblar (Ali, Madina va yaqin o'yinchilar) ustiga bosib hujum qiling</li>
+            <li><span class="dot teal"></span> Klanlar jangi sektorida jamoaviy km to'plang</li>
+          </ul>
+
+          <div class="mode-switch-demo">
+            <button type="button" class="mode-btn active" data-mapmode="gps">🗺️ GPS Xarita</button>
+            <button type="button" class="mode-btn" data-mapmode="island">🏝️ Taktik Orol</button>
+          </div>
+        </div>
+
+        <div class="showcase-media">
+          <div class="map-frame" id="mapModeFrame">
+            <img id="mapModeImg" src="./assets/screens/map.png" alt="GPS Xarita ko'rinishi" />
+            <div class="map-overlay-tag" id="mapModeTag">Amir Temur xiyoboni · Jonli GPS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE STEP-TO-ARMY SIMULATOR -->
+    <section id="simulator" class="section container">
+      <div class="sim-card glass-card">
+        <div class="sim-header">
+          <div>
+            <span class="eyebrow">INTERAKTIV KALKULYATOR</span>
+            <h2>Bugun necha km yurasiz?</h2>
+            <p class="muted-text">Slayderni suring va yurgan masofangiz qanday kuchga aylanishini ko'ring.</p>
+          </div>
+          <div class="sim-km-display">
+            <span id="simKm">4.0</span>
+            <small>km / kun</small>
+          </div>
+        </div>
+
+        <div class="slider-wrap">
+          <input id="kmSlider" type="range" min="0" max="20" step="0.5" value="4" aria-label="Kunlik masofa (km)" />
+          <div class="slider-marks">
+            <span>0 km</span><span>5 km</span><span>10 km</span><span>15 km</span><span>20 km</span>
+          </div>
+        </div>
+
+        <div class="sim-results">
+          <div class="sim-stat">
+            <span class="stat-label">Yangi hudud</span>
+            <strong id="simTiles" class="text-lime">+4 katak</strong>
+          </div>
+          <div class="sim-stat">
+            <span class="stat-label">🛡️ Piyoda</span>
+            <strong id="simInfantry">80 ta</strong>
+          </div>
+          <div class="sim-stat">
+            <span class="stat-label">🐎 Otliq</span>
+            <strong id="simCavalry">24 ta</strong>
+          </div>
+          <div class="sim-stat">
+            <span class="stat-label">🏹 Kamonchi</span>
+            <strong id="simArchers">12 ta</strong>
+          </div>
+          <div class="sim-stat">
+            <span class="stat-label">Qal'a darajasi</span>
+            <strong id="simLevel">1-daraja</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 UZBEKISTAN REGIONS LEAGUE -->
+    <section id="leagues" class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">HUDUDIY LIGALAR</span>
+          <h2>O'zbekistonning <span class="text-lime">14 ta hududi</span></h2>
+          <p class="muted-text">Xarita tepasidan o'z viloyatingizni tanlang — xarita avtomatik o'sha shahar markaziga o'tadi.</p>
+        </div>
+        <div class="region-preview-pill glass-card">
+          <span class="pulse-dot"></span>
+          <span id="activeRegionLabel">Toshkent shahri ligasi · 41.31° N, 69.28° E</span>
+        </div>
+      </div>
+
+      <div class="leagues-layout">
+        <div class="region-grid" id="regionGrid" role="listbox" aria-label="O'zbekiston viloyatlari"></div>
+        <div class="region-phone-preview">
+          <img src="./assets/screens/region.png" alt="Viloyat ligasini tanlash oynasi" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SEASON TIERS & CLANS -->
+    <section id="ranks" class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">MAVSUM REYTINGI</span>
+          <h2><span class="tier-bronze">Bronza I</span> dan <span class="tier-diamond">Olmos</span> gacha</h2>
+          <p class="muted-text">Har bir yangi o'yinchi 0 RP va Bronza I dan boshlaydi. G'alabalar, qal'a darajasi va kilometrlar reytingni oshiradi.</p>
+        </div>
+      </div>
+
+      <div class="tiers-track">
+        <div class="tier-card active">
+          <div class="hex-badge bronze">I</div>
+          <strong>Bronza</strong>
+          <span>0+ RP · Boshlanish</span>
+        </div>
+        <div class="tier-card">
+          <div class="hex-badge silver">II</div>
+          <strong>Kumush</strong>
+          <span>120+ RP</span>
+        </div>
+        <div class="tier-card">
+          <div class="hex-badge gold">III</div>
+          <strong>Oltin</strong>
+          <span>300+ RP</span>
+        </div>
+        <div class="tier-card">
+          <div class="hex-badge plat">IV</div>
+          <strong>Platina</strong>
+          <span>600+ RP</span>
+        </div>
+        <div class="tier-card">
+          <div class="hex-badge diamond">V</div>
+          <strong>Olmos</strong>
+          <span>1000+ RP</span>
+        </div>
+      </div>
+
+      <div class="artwork-banner glass-card">
+        <img src="./assets/images/island.jpg" alt="Harakatlan orol qal'asi" class="island-art" />
+        <div class="artwork-copy">
+          <span class="hand-note">birga kuchliroqmiz!</span>
+          <h3>Klan yarating va hududlarni birgalikda himoya qiling</h3>
+          <p>
+            Qisqa teg va taklif kodi orqali do'stlaringizni klanga qo'shing. Har hafta klan a'zolarining jami
+            kilometrlari qo'shilib, viloyatning eng kuchli klani aniqlanadi.
+          </p>
+          <div class="chip-row">
+            <span class="mini-chip">Klan yaratish &amp; Kod bilan kirish</span>
+            <span class="mini-chip">Haftalik Klanlar Jangi</span>
+            <span class="mini-chip">O'z yerim hech qachon yo'qolmaydi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS GALLERY -->
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">ILOVA DIZAYNI</span>
+          <h2>Qorong'u, tezkor va <span class="text-lime">qulay interfeys</span></h2>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <figure class="gallery-item glass-card">
+          <img src="./assets/screens/home.png" alt="Bugun ekrani" loading="lazy" />
+          <figcaption><strong>Bugun</strong><span>0.00 km maqsad va AI Skaner</span></figcaption>
+        </figure>
+        <figure class="gallery-item glass-card">
+          <img src="./assets/screens/map.png" alt="GPS Xarita ekrani" loading="lazy" />
+          <figcaption><strong>Jonli Xarita</strong><span>Ko'chalar bo'ylab polygon egallash</span></figcaption>
+        </figure>
+        <figure class="gallery-item glass-card">
+          <img src="./assets/screens/territory.png" alt="Mening hududim ekrani" loading="lazy" />
+          <figcaption><strong>Hudud</strong><span>1-daraja qal'a va 0/5 katak</span></figcaption>
+        </figure>
+        <figure class="gallery-item glass-card">
+          <img src="./assets/screens/clan.png" alt="Klanlar ekrani" loading="lazy" />
+          <figcaption><strong>Klanlar</strong><span>Jamoaviy musobaqalar</span></figcaption>
+        </figure>
+        <figure class="gallery-item glass-card">
+          <img src="./assets/screens/profile.png" alt="Profil ekrani" loading="lazy" />
+          <figcaption><strong>Profil</strong><span>Bronza I reytingi va Qurolxona</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD & FAQ -->
+    <section id="download" class="section container">
+      <div class="download-cta">
+        <div class="download-copy">
+          <span class="hand-note dark-hand">hoziroq boshlang!</span>
+          <h2>Birinchi qadamingizni tashlashga tayyormisiz?</h2>
+          <p>
+            Android qurilmalar uchun APK tayyor. Health Connect va Samsung Health bilan avtomatik ishlaydi.
+            iOS (App Store) versiyasi ham loyiha tarkibida mavjud.
+          </p>
+          <div class="hero-cta">
+            <a class="btn-dark btn-lg" href="https://github.com/SarvarDevYT/harakatlan/releases" target="_blank" rel="noopener noreferrer">
+              <span>GitHub Releases'dan APK yuklash</span>
+              <span>↗</span>
+            </a>
+            <a class="btn-outline-dark btn-lg" href="https://github.com/SarvarDevYT/harakatlan" target="_blank" rel="noopener noreferrer">
+              <span>GitHub Repozitoriy</span>
+            </a>
+          </div>
+          <p class="install-hint">
+            * APK o'rnatilgach, aniq GPS xarita va qadam hisoblash uchun joylashuv hamda harakat sensori ruxsatini bering.
+          </p>
+        </div>
+        <div class="download-badge-card">
+          <img src="./assets/images/logo.png" alt="Harakatlan ilova belgisi" width="96" height="96" />
+          <strong>Harakatlan v1.0</strong>
+          <span>Android 8.0+ · Flutter + Firebase</span>
+          <div class="tech-tags">
+            <span>Flutter</span>
+            <span>CARTO Maps</span>
+            <span>Gemini AI</span>
+            <span>Vercel API</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-left">
+      <img src="./assets/images/logo.png" alt="" width="28" height="28" />
+      <span><strong>Harakatlan</strong> — Yurib hudud egallash o'yini</span>
+    </div>
+    <div class="footer-right">
+      <span>O'zbekiston · SarvarDevYT</span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
